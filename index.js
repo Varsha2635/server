@@ -61,7 +61,7 @@ mongoose.connection.once("open", () => {
 // Middleware
 const cors = require("cors");
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: "https://papaya-stardust-91ef3b.netlify.app/login",
   credentials: true
 }));
 app.use(express.json());
