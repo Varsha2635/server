@@ -32,8 +32,6 @@ app.use(cookieParser());
 
 // Routes
 const userRoutes = require("./routes/user");
-const appointmentRoutes = require("./routes/appointment");
-const doctorRoutes = require("./routes/doctor");
 
 app.use("/", userRoutes);
 
