@@ -23,7 +23,9 @@ mongoose.connection.once("open", () => {
 const cors = require("cors");
 app.use(cors({
   origin: "https://papaya-stardust-91ef3b.netlify.app",
-  credentials: true
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
 app.use(express.json());
 const cookieParser = require("cookie-parser");
@@ -34,9 +36,7 @@ const userRoutes = require("./routes/user");
 const appointmentRoutes = require("./routes/appointment");
 const doctorRoutes = require("./routes/doctor");
 
-app.use("/api/v1", userRoutes);
-app.use("/api/appointments", appointmentRoutes);
-app.use("/api/doctors", doctorRoutes);
+app.use("/", userRoutes);
 
 // Health check
 app.get("/", (req, res) => {
