@@ -21,27 +21,29 @@ async function seedDoctors() {
     const count = await Doctor.countDocuments();
     if (count === 0) {
       await Doctor.insertMany([
-        {
-          name: "Dr. Neha Mehta",
-          specialization: "Cardiologist",
-          location: "Apollo Hyderabad",
-          phone: "9876543210",
-          rating: 4.8
-        },
-        {
-          name: "Dr. Raj Patel",
-          specialization: "Heart Surgeon",
-          location: "Fortis Mumbai",
-          phone: "9991234567",
-          rating: 4.6
-        },
-        {
-          name: "Dr. Aisha Khan",
-          specialization: "General Physician",
-          location: "AIIMS Delhi",
-          phone: "8888765432",
-          rating: 4.7
-        }
+        [
+  {
+    "name": "Dr. Neha Mehta",
+    "specialization": "Cardiologist",
+    "location": "Apollo Hyderabad",
+    "phone": "9876543210",
+    "rating": 4.8
+  },
+  {
+    "name": "Dr. Raj Patel",
+    "specialization": "Heart Surgeon",
+    "location": "Fortis Mumbai",
+    "phone": "9991234567",
+    "rating": 4.6
+  },
+  {
+    "name": "Dr. Aisha Khan",
+    "specialization": "General Physician",
+    "location": "AIIMS Delhi",
+    "phone": "8888765432",
+    "rating": 4.7
+  }
+]
       ]);
       console.log("✅ Dummy doctors inserted into database.");
     }
