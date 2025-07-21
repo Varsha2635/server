@@ -16,7 +16,6 @@ dbConnect();
 // Run seeding when DB is connected
 mongoose.connection.once("open", () => {
   console.log("✅ MongoDB connected");
-  seedDoctors();
 });
 
 // Middleware
